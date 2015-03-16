@@ -8,4 +8,7 @@
  * Provides the app with the ability to display blog content and features
  */
 angular
-  .module('SC-app-blog');
+  .module('SC-app-blog', [
+    'SC-app-utils',
+    'SC-app-content-components'
+  ]);

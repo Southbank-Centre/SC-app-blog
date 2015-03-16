@@ -1,0 +1,38 @@
+<div class="events-list">
+
+  <h1 class="page-heading">WOW Blog</h1>
+
+  <div class="container">
+    <article class="list-item" ng-repeat="blogPost in blogItems track by blogPost.nid">
+      
+      <div class="list-item__image">
+
+        <a ui-sref="app.blogSingle({ blogId: blogPost.alias_json })">
+          <img src="{{ blogPost.field_image_file.field_image.file.url }}" alt="{{ blogPost.field_image_file.field_image.alt }}"/>
+        </a>
+
+      </div>
+      <div class="list-item__content">
+
+        <a ui-sref="app.blogSingle({ blogId: blogPost.alias_json })" class="list-item__title">
+          <h2>{{ blogPost.title }}</h2>
+        </a>
+
+        <div class="list-item__author-information">
+          <h4 class="list-item__subtitle">Posted on {{ blogPost.field_published_date | amDateFormat:'dddd D MMMM YYYY'}}<span class="list-item__subtitle--light"> by </span>{{ blogPost.field_author_name }}</h4>
+        </div>
+        
+        <div class="list-item__teaser">
+          {{ blogPost.field_teaser }}
+        </div>
+
+        <div class="list-item__read-more">
+          <a ui-sref="app.blogSingle({ blogId: blogPost.alias_json })" class="read-more-link" href="/whats-on/mirth-control-359">Read more</a>
+        </div>
+
+      </div>
+
+    </article>
+  </div>
+
+</div>

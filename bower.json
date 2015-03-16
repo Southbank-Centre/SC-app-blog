@@ -2,7 +2,9 @@
   "name": "SC-app-blog",
   "version": "0.0.0",
   "dependencies": {
-  	"angular": "~1.2.0"
+  	"angular": "~1.2.0",
+    "SC-app-utils": "Southbank-Centre/SC-app-utils",
+    "SC-app-content-components": "Southbank-Centre/SC-app-content-components"
   },
   "appPath": "app",
   "main": "./release/SC-app-blog.min.js",

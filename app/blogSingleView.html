@@ -1,0 +1,89 @@
+<div class="blog-single container" data-ng-controller='BlogSingleCtrl'>
+  <article>
+    <header class="container">
+
+      <div class="blog-post-name" id="blog-post-name">
+        <h1>{{ blogPost.title }}</h1>
+
+        <div class="blog-list-date" ng-show="blogPost.field_published_date">
+          <p>Posted on {{ blogPost.field_published_date | amDateFormat:'dddd D MMMM YYYY' }}</p>
+        </div>
+
+        <div class="blog-author">
+          {{ blogPost.field_author_name }}
+        </div>
+
+      </div>
+
+      <div class="blog-post-back-link">
+        <a ui-sref="app.blogList()">Back to blog</a>
+      </div>
+
+    </header>
+
+    <div class="paragraph" ng-repeat="paragraph in blogPost.field_component">
+
+      <div ng-switch="paragraph.bundle == 'subheading'">
+        <div ng-switch-when="true">
+          <div sc-heading></div>
+        </div>
+      </div>
+
+      <div ng-switch="paragraph.bundle == 'long_text'">
+        <div ng-switch-when="true">
+          <div class="text-wrapper">
+            <div sc-long-text></div>
+          </div>
+        </div>
+      </div>
+
+      <div ng-switch="paragraph.bundle == 'soundcloud_embed'">
+        <div ng-switch-when="true">
+          <div sc-soundcloud></div>
+        </div>
+      </div>
+
+      <div ng-switch="paragraph.bundle == 'youtube_embed'">
+        <div ng-switch-when="true">
+          <div sc-youtube></div>
+        </div>
+      </div>
+
+      <div ng-switch="paragraph.bundle == 'flickr_embed'">
+        <div ng-switch-when="true">
+          <div sc-flickr></div>
+        </div>
+      </div>
+
+      <div ng-switch="paragraph.bundle == 'pull_quote'">
+        <div ng-switch-when="true">
+          <div sc-pull-quote></div>
+        </div>
+      </div>
+
+      <div ng-switch="paragraph.bundle == 'link'">
+        <div ng-switch-when="true">
+          <div sc-link></div>
+        </div>
+      </div>
+
+      <div ng-switch="paragraph.bundle == 'image'">
+        <div ng-switch-when="true">
+          <div sc-image></div>
+        </div>
+      </div>
+
+    </div>
+
+  </article>
+  <div class="blog-disqus-comments">
+    <div class="blog-disqus-comments-inner">
+      <dir-disqus disqus-shortname="{{ disqus.shortname }}"
+             disqus-identifier="{{ disqus.identifier }}"
+             disqus-url="{{ disqus.url }}"
+             disqus-title="{{ disqus.title }}"
+             ready-to-bind="{{ disqus.blogLoaded }}">
+      </dir-disqus>
+    </div>
+  </div>
+</div>
