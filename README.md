@@ -16,9 +16,9 @@ Replace n.n.n with the version number of this module that you require. See [the 
 Add **SC-app-blog** to the dependency list in **[YourAppName].module.js**
 
 ### Step 3
-Add the app.blog and app.blogList states to your app:
+Add the app.blogSingle and app.blogList states to your app:
 
-    .state('app.blog', {
+    .state('app.blogSingle', {
       url: '/blog/:blogAlias',
       views: {
         '@': {
@@ -35,4 +35,4 @@ Add the app.blog and app.blogList states to your app:
       }
     })
 
-The URL can be changed to whatever is required, although the parameter *:personAlias* should remain the same for the page to work.
+The URL can be changed to whatever is required, although the parameter *:blogAlias* should remain the same for the page to work.
