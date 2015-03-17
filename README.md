@@ -2,6 +2,10 @@
 
 ## Installation
 
+### Step 0
+
+Check [this app's dependencies](https://github.com/Southbank-Centre/SC-app-blog/blob/master/bower.json) and make sure that you follow the installation instructions for the SC-app-* modules that this one depends on.
+
 ### Step 1
 Run the following command in your app's root directory.
 
@@ -19,7 +23,7 @@ Add **SC-app-blog** to the dependency list in **[YourAppName].module.js**
 Add the app.blogSingle and app.blogList states to your app:
 
     .state('app.blogSingle', {
-      url: '/blog/:blogAlias',
+      url: '^/blog/:blogAlias',
       views: {
         '@': {
           templateUrl: 'bower_components/SC-app-blog/release/blogSingleView.html'
@@ -27,7 +31,7 @@ Add the app.blogSingle and app.blogList states to your app:
       }
     })
     .state('app.blogList', {
-      url: '/blog',
+      url: '^/blog',
       views: {
         '@': {
           templateUrl: 'bower_components/SC-app-blog/release/blogListView.html'
