@@ -9,6 +9,7 @@
  */
 angular
   .module('SC-app-blog', [
+    'angularUtils.directives.dirDisqus',
     'SC-app-utils',
     'SC-app-content-components'
   ]);
