@@ -1,0 +1,107 @@
+.blog-single {
+  header {
+    @include breakpoint($bp-small-desktop) {
+      @include span(10);
+      @include post(2);
+    }
+    background: $white;
+    margin: $margin*2 0 2px;
+//
+    h1 {
+      margin: 0;
+    }
+
+    .blog-list-date {
+      p {
+        line-height: 1.3em;
+        margin-bottom: 0;
+      }
+    }
+  }
+  ul {
+    margin-left: 1em;
+  }
+  figure {
+    @include breakpoint($bp-small-desktop) {
+      @include span(10);
+      @include post(2);
+      margin-bottom: 70px;
+    }
+    img {
+      min-width:0;
+    }
+  }
+
+  .pullquote-container, .youtube-container, .soundcloud-container, .flickr-container {
+    @include breakpoint($bp-small-desktop) {
+      @include span(10);
+      @include post(2);
+      margin-bottom: 70px;
+    }
+  }
+
+  .text-wrapper {
+    margin-bottom: 70px;
+    background-color: #ffffff;
+    @include breakpoint($bp-small-desktop) {
+      @include span(10);
+      @include post(2);
+    }
+    .text-container {
+      margin-bottom: 0;
+      @include breakpoint($bp-small-desktop) {
+        @include span(7 of 10);
+      }
+    }
+  }
+
+  .sub-heading {
+    padding-top: 0;
+  }
+
+  // Give the image a 2px bottom margin only if it's the first paragraph
+  .paragraph:first-of-type {
+    .image-container {
+      margin-bottom: 2px;
+    }
+  }
+
+  .blog-post-name {
+    @include breakpoint($bp-desktop) {
+      @include span(7);
+      border-right: 2px solid #ecedea;
+      padding: $padding;
+    }
+
+    padding: $padding $padding 0 $padding
+  }
+
+  .blog-post-back-link {
+    @include breakpoint($bp-desktop) {
+      @include span(3);
+      padding: $padding;
+    }
+
+    padding: 0 $padding 14px $padding;
+  }
+
+  .blog-disqus-comments {
+
+    padding: 20px;
+    background-color: $white;
+    float: left;
+    width: 100%;
+
+    @include breakpoint($bp-small-desktop) {
+      @include span(10);
+    }
+  }
+
+  .blog-disqus-comments-inner {
+
+    @include breakpoint($bp-small-desktop) {
+      @include span(7 of 10);
+    }
+  }
+
+}
