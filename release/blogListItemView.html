@@ -1,0 +1,27 @@
+<div class="list-item__image">
+
+    <a ui-sref="wow.blogSingle({ blogId: blogPost.alias_json })">
+        <img src="{{ blogPost.field_image.file.url }}" alt="{{ blogPost.field_image.alt }}"/>
+    </a>
+
+</div>
+<div class="list-item__content">
+
+    <a ui-sref="wow.blogSingle({ blogId: blogPost.alias_json })" class="list-item__title">
+        <h3>{{ blogPost.title }}</h3>
+    </a>
+
+    <div class="list-item__author-information">
+        <div class="list-item__subtitle">Posted on {{ blogPost.field_published_date | amDateFormat:'dddd D MMMM YYYY'}} <br> 
+        by {{ blogPost.field_author_name }}</div>
+    </div>
+    
+    <div class="list-item__teaser">
+        {{ blogPost.field_teaser }}
+    </div>
+
+    <div class="list-item__read-more">
+        <a ui-sref="wow.blogSingle({ blogId: blogPost.alias_json })" class="read-more-link" href="/whats-on/mirth-control-359">Read more</a>
+    </div>
+
+</div>
