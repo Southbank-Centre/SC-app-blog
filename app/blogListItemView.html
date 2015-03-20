@@ -1,13 +1,13 @@
 <div class="list-item__image">
 
-    <a ui-sref="wow.blogSingle({ blogId: blogPost.alias_json })">
+    <a ui-sref="app.blogSingle({ blogId: blogPost.alias_json })">
         <img src="{{ blogPost.field_image.file.url }}" alt="{{ blogPost.field_image.alt }}"/>
     </a>
 
 </div>
 <div class="list-item__content">
 
-    <a ui-sref="wow.blogSingle({ blogId: blogPost.alias_json })" class="list-item__title">
+    <a ui-sref="app.blogSingle({ blogId: blogPost.alias_json })" class="list-item__title">
         <h3>{{ blogPost.title }}</h3>
     </a>
 
@@ -21,7 +21,7 @@
     </div>
 
     <div class="list-item__read-more">
-        <a ui-sref="wow.blogSingle({ blogId: blogPost.alias_json })" class="read-more-link" href="/whats-on/mirth-control-359">Read more</a>
+        <a ui-sref="app.blogSingle({ blogId: blogPost.alias_json })" class="read-more-link" href="/whats-on/mirth-control-359">Read more</a>
     </div>
 
 </div>
