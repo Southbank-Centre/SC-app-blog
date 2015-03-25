@@ -1,7 +1,7 @@
 <div class="simple-pager">
     <div class="simple-pager__pager simple-pager__pager--previous">
         <div ng-if="previousBlogPost.title" class="simple-pager__inner">
-            <a class="simple-pager__link simple-pager__link--wrapper" ui-sref="wow.blogSingle({ blogAlias: previousBlogPost.alias_json })">
+            <a class="simple-pager__link simple-pager__link--wrapper" ui-sref="app.blogSingle({ blogAlias: previousBlogPost.alias_json })">
                 <img class="simple-pager__image simple-pager__image--left" src="/assets/imgs/arrow-outline-left.png" alt="Read {{ previousBlogPost.title }}"/>
                 <div class="simple-pager__content">
                     <div class="simple-pager__header">Previous post:</div>
@@ -12,7 +12,7 @@
     </div>
     <div class="simple-pager__pager simple-pager__pager--next">
         <div ng-if="nextBlogPost.title" class="simple-pager__inner">
-            <a class="simple-pager__link simple-pager__link--wrapper" ui-sref="wow.blogSingle({ blogAlias: nextBlogPost.alias_json })">
+            <a class="simple-pager__link simple-pager__link--wrapper" ui-sref="app.blogSingle({ blogAlias: nextBlogPost.alias_json })">
                 <img class="simple-pager__image simple-pager__image--right" src="/assets/imgs/arrow-outline-right.png" alt="Read {{ nextBlogPost.title }}"/>
                 <div class="simple-pager__content">
                     <div class="simple-pager__header">Next post:</div>
