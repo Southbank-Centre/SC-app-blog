@@ -139,7 +139,7 @@ angular.module('SC-app-blog')
          * @methodOf SC-app-blog.factory:blogFactory
          * @name SC-app-blog.factory:blogFactory#getBlogSingle
          * @returns {undefined} Undefined
-         * @param {string} blogId The ID of the blog post
+         * @param {string} blogAlias The Alias of the blog post
          * @param {function} callbackSuccess The function to call when the HTTP request succeeds
          * @param {function} callbackError The function to call when the HTTP request fails
          *
