@@ -10,7 +10,7 @@ angular.module('SC-app-blog')
    * Renders blog simple pager element using it's relevant template
    *
    */  
-  .directive('scBlogSimplePager', function($http) {
+  .directive('scBlogSimplePager', function() {
     return {
       restrict: 'A',
       replace: true,
