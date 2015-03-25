@@ -40,6 +40,12 @@
     }
   }
 
+  .paragraph:last-of-type {
+    .pullquote-container, .youtube-container, .soundcloud-container, .flickr-container {
+      margin-bottom: 2px;
+    }
+  }
+
   .text-wrapper {
     margin-bottom: 70px;
     background-color: #ffffff;
@@ -102,6 +108,91 @@
     @include breakpoint($bp-small-desktop) {
       @include span(7 of 10);
     }
+  }
+
+  /**
+   * Simple pager.
+   */
+  .simple-pager {
+    @extend .container;
+    background-color: white;
+    margin-bottom: 70px;
+
+    @include breakpoint($bp-small-desktop) {
+      @include post(2);
+    }
+    clear:both;
+
+    .simple-pager__pager {
+      @include span(5 of 10);
+      padding: 20px;
+
+      @include breakpoint($bp-small-tablet) {
+        transform-style: preserve-3d;
+        perspective: 1000;
+      }
+    }
+
+    .simple-pager__pager--next {
+      @include last;
+      text-align: right;
+    }
+
+    .simple-pager__image {
+      @include clearfix;
+
+      float: left;
+      width : floor(span(4 of 5));    // Using the floor() function to ensure that fractional percentages don't get used
+      max-width: 50px;
+      padding-bottom: 20px;
+
+      @include breakpoint($bp-small-tablet) {
+        width: floor(span(1 of 5));
+        padding-bottom: 0;
+        max-width: inherit;
+        transform: translateZ(0);   // There are issues with subpixel rendering
+      }
+    }
+
+    .simple-pager__content {
+      @include span(5 of 5);
+      @include clearfix;
+
+      @include breakpoint($bp-small-tablet) {
+        @include span(4 of 5);
+      }
+    }
+
+    .simple-pager__link {
+      @include special-link;
+      display: block;
+    }
+
+    .simple-pager__blog-title {
+      font-weight: normal;
+    }
+
+    .simple-pager__pager--previous {
+      .simple-pager__content {
+        @include last;
+        @include breakpoint($bp-small-tablet) {
+          padding-left: 40px;
+        }
+      }
+    }
+
+    .simple-pager__pager--next {
+      .simple-pager__image--right {
+        @include last;
+      }
+
+      .simple-pager__content {
+        @include breakpoint($bp-small-tablet) {
+          padding-right: 40px;
+        }
+      }
+    }
+    
   }
 
 }
