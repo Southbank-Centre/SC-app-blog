@@ -45,7 +45,7 @@ angular.module('SC-app-blog')
  */
 
 angular.module('SC-app-blog')
-  .controller('BlogSingleCtrl', ["$rootScope", "$scope", "$stateParams", "$location", "blogFactory", "utilitiesFactory", function ($rootScope, $scope, $stateParams, $location, blogFactory, utilitiesFactory) {
+  .controller('BlogSingleCtrl', ["$rootScope", "$scope", "$stateParams", "$location", "blogFactory", "utilitiesFactory", "appConfig", function ($rootScope, $scope, $stateParams, $location, blogFactory, utilitiesFactory, appConfig) {
 
     // Prevent the diqus directive from trying to load the comments until the page has fully loaded
     $scope.disqus = {
@@ -63,7 +63,7 @@ angular.module('SC-app-blog')
 
       // Disqus setup
       // Get the disqus shortname string
-      var disqusShortname = $rootScope.disqus_shortname;
+      var disqusShortname = appConfig.disqus_shortname;
 
       // Check the hostname so that we can load comments for the correct environment
       var host = $location.host();
@@ -77,7 +77,7 @@ angular.module('SC-app-blog')
         $scope.disqus.shortname = 'staging' + disqusShortname;
       }
       // live
-      else if(host === $rootScope.hostName) {
+      else if(host === appConfig.hostName) {
         $scope.disqus.shortname = disqusShortname;
       }
 
